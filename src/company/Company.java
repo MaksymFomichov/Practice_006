@@ -110,17 +110,17 @@ public class Company {
             BufferedReader br = new BufferedReader(reader);
             int arraySize = Integer.parseInt(br.readLine());
             List<SuperEmployees> superEmployees = new ArrayList<>();
-            while (arraySize > 0) {
-                if (br.readLine().equals("EmployeeMonth")) {
+            for (int i = 0; i < arraySize; i++) {
+                String tempReader = br.readLine();
+                if (tempReader.equals("EmployeeMonth")) {
                     superEmployees.add(new EmployeeMonth(br.readLine(), br.readLine(), Double.parseDouble(br.readLine())));
                 }
-                if (br.readLine().equals("Employee8Hour")) {
+                if (tempReader.equals("Employee8Hour")) {
                     superEmployees.add(new Employee8Hour(br.readLine(), br.readLine(), Double.parseDouble(br.readLine())));
                 }
-                if (br.readLine().equals("EmployeeFree")) {
+                if (tempReader.equals("EmployeeFree")) {
                     superEmployees.add(new EmployeeFree(br.readLine(), br.readLine(), Double.parseDouble(br.readLine()), Integer.parseInt(br.readLine())));
                 }
-                arraySize--;
             }
             outputConsole(superEmployees);
             return superEmployees;
